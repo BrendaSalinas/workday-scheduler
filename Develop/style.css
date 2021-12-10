@@ -33,8 +33,11 @@ textarea{
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
+
+
 }
+
 
 .hour {
   background-color: #ffffff;
@@ -62,7 +65,6 @@ textarea{
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
-  color: white;
 }
 
 .saveBtn i:hover {
@@ -73,4 +75,11 @@ textarea{
 #currentDay {
   font-size: 30px;
   
+}
+
+.fa-save {
+  font-size: 36px;
+  text-anchor: middle;
+  text-align: center;
+  color: white;
 }
