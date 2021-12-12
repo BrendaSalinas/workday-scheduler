@@ -9,14 +9,14 @@ var time1 = document.getElementById("time");
 
 //get the container element
 var container = document.getElementById('container');
-//an array of hours 
-const hours = ["9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM"];
+//an array of standard business hours 
+const hours = ["6:00AM","8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM"];
 
 hours.forEach(hour => {
     $('#container').append(`
         <div class = "row mt-3">
             <div class = "col-md-1 hour">${hour}</div>
-            <textarea id = "text1" class="col-md-10 future time-block"/></textarea>
+            <textarea id = "text1" class="col-md-10 time-block"/></textarea>
             <button class="col-md-1 saveBtn ">
                 <i class=" far fa-save"></i>
             </button>
@@ -52,5 +52,18 @@ for (i=0; i<button1.length; i++) {
     });
 };
 
+//Current time depending on your time zone 
+var currentTime = moment().format("LT");
 
+//adding the colors depending of the time of the day 
+for (i=0; i<hours.length; i++){
 
+    if (currentTime> hours[i]){
+        $('textarea').addClass('future');
+    }else if (currentTime <hours[i]){
+        $('textarea').addClass('past');
+    }else{
+        $('textarea').addClass('present');
+    };
+    
+};
