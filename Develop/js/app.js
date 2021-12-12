@@ -14,7 +14,7 @@ const hours = ["9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM"
 
 hours.forEach(hour => {
     $('#container').append(`
-        <div class = "row mt-2">
+        <div class = "row mt-3">
             <div class = "col-md-1 hour">${hour}</div>
             <textarea id = "text1" class="col-md-10 future time-block"/></textarea>
             <button class="col-md-1 saveBtn ">
@@ -33,7 +33,7 @@ var storedInput = localStorage.getItem('task')
 
 if (time1){
     time1.textContent = storedInput;
-}
+};
 
 time1.addEventListener('input',letter => {
     time1.textContent = letter.target.value;
