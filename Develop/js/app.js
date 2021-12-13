@@ -53,16 +53,19 @@ for (i=0; i<button1.length; i++) {
 };
 
 //Current time depending on your time zone 
-var currentTime = moment().format("LT");
+var currentTime = parseInt(moment().format("LT"));
+var MilitaryT = currentTime + 12;
+var hoursM = ["8","9","10","11","12","13","14","15","16","17"]
+console.log(MilitaryT)
 
 //adding the colors depending of the time of the day 
-for (i=0; i<hours.length; i++){
-
-    if (currentTime>hours[i]){
+for (i=0; i<hoursM.length; i++){
+    console.log(parseInt(hoursM[i]))
+    if (currentTime > parseInt(hoursM[i])){
         $('textarea').addClass('future');
-    }else if (currentTime <hours[i]){
-        $('textarea').addClass('past');
-    }else{
+    }else if (currentTime === parseInt(hoursM[i])){
         $('textarea').addClass('present');
+    }else{
+        $('textarea').addClass('past');
     };
 };
